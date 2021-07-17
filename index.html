@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- displays site properly based on user's device -->
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png">
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+
+
+        <title>Frontend Mentor | Tip calculator app</title>
+
+        <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+        <style>
+            .attribution {
+                font-size: 11px;
+                text-align: center;
+                padding: 10px;
+            }
+
+            .attribution a {
+                color: hsl(228, 45%, 44%);
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Calculator Body -->
+        <main class="calculator">
+          <img class="logo" src="images/logo.svg">
+            <div class="calc-container">
+                <!-- Variables -->
+                <section class="calc">
+                    <div class="bill-section">
+                        <p>Bill</p>
+                        <div class="position">
+                        <img src="images/icon-dollar.svg">
+                        <input class="bill" type="text" name="bill" placeholder="0">
+                      </div>
+                    </div>
+                    <div class="tips-section">
+                        <p>Select Tip %</p>
+                        <div>
+                            <label for="5" class="tip" data-value="0.05">5%</label><input type="radio" name="tip" id="5"></div>
+                        <div>
+                            <label for="10" class="tip" data-value="0.1">10%</label><input type="radio" name="tip" id="10"></div>
+                        <div>
+                            <label for="15" class="tip" data-value="0.15">15%</label><input type="radio" name="tip" id="15"></div>
+                        <div>
+                            <label for="25" class="tip" data-value="0.25">25%</label><input type="radio" name="tip" id="25"></div>
+                        <div>
+                            <label for="50" class="tip" data-value="0.5">50%</label><input type="radio" name="tip" id="50"></div>
+                        <div><input type="text" name="tip" placeholder="Custom" class="tip"></div>
+                    </div>
+
+                    <div class="people-number">
+                        <p>Number of People</p>
+                        <p class="error">Can't be zero</p>
+                        <div class="position">
+                          <img src="images/icon-person.svg">
+                          <input class="number" name="number" type="text" placeholder="0">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="summary">
+                    <!-- Tip amount per person -->
+                    <div class="amount">
+                    <div>
+                        <h2>Tip Amount</h2>
+                        <p>/ person</p>
+                      </div>
+                        <h3 class="tip-sum">$0.00</h3>
+                    </div>
+                    <!-- Total price per person-->
+                    <div class="total">
+                      <div>
+                        <h2>Total</h2>
+                        <p>/ person</p>
+                      </div>
+                        <h3 class="total-sum">$0.00</h3>
+                    </div>
+                    <button class="reset inactive">Reset</button>
+                </section>
+            </div>
+            <!-- Calculator body ends -->
+
+            <div class="attribution">
+                Challenge by
+                <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
+                <a href="#">Your Name Here</a>.
+            </div>
+        </main>
+
+        
+    </body>
+    <script src="script.js"></script>
+</html>

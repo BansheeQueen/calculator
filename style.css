@@ -1,0 +1,247 @@
+/* Font */
+@import url(
+    'https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap'
+);
+/* Variables */
+:root {
+    --primaryColor: hsl(172, 67%, 45%);
+    --vdCyan : hsl(183, 100%, 15%);
+    --dgCyan : hsl(186, 14%, 43%);
+    --dgCyan2 : hsl(184, 14%, 56%);
+    --lgCyan : hsl(185, 41%, 84%);
+    --lgCyan2 : hsl(189, 41%, 97%);
+    --white : hsl(0, 0%, 100%);
+    --fontSize : 14px;
+
+}
+
+/* Basic css */
+body {
+    box-sizing : border-box;
+    background-color: var(--lgCyan);
+    font-size: var(--fontSize);
+    font-family: 'Space Mono';
+}
+
+main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 680px;
+}
+
+.calc-container {
+    display: flex;
+    padding: 40px;
+    background-color: var(--white);
+    border-radius: 20px;
+}
+
+
+.logo {
+    display: block;
+    margin: 100px auto;
+    margin-top: 0px;
+}
+
+h2 {
+    color: var(--white);
+}
+
+h3 {
+    width: 180px;
+    color: var(--primaryColor);
+    font-weight: 700;
+    font-size: 40px;
+    text-align: right;
+    line-height: 70%;
+    margin-left: 40px;
+}
+
+p {
+    margin-bottom: 5px;
+    font-weight: bold;
+    line-height: 200%;
+    color: var(--dgCyan2);}
+
+input, button {
+    width: 100%;
+    border-radius: 5px;
+    font-family: 'Space Mono';
+    font-weight: 700;
+    cursor: pointer;}
+
+input {
+margin: 0; 
+border: 2px solid var(--lgCyan2);
+padding: 2px 5px;
+background-color: var(--lgCyan2);
+font-size: 25px;
+text-align: right;
+color: var(--vdCyan);
+}
+
+input:focus, input:hover {
+   outline: none;
+   border: 2px solid var(--primaryColor);
+   transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
+}
+
+/* bill */
+.calc {margin-right: 50px;}
+
+.bill-section {margin-bottom: 35px;}
+
+.position {position: relative;}
+
+.position img {
+    position: absolute;
+    top: 0;
+    width: 10px;
+    z-index: 2;
+    margin: 16px 15px;
+}
+
+/* Tips options */
+.tips-section {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    max-width: 350px;}
+
+.tips-section p {
+    flex-basis: 100%;
+}
+
+.tips-section div {
+    position: relative;
+    height: 50px;
+    flex-basis: 29%;
+}
+
+.tips-section label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 2px solid var(--vdCyan);
+        border-radius: 5px;
+        background-color: var(--vdCyan);
+        color: var(--white);
+        font-size: 24px;
+        padding: 8px 5px;
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+}
+
+.tips-section input[type="radio"] {
+    position: relative;
+    visibility: hidden;
+    z-index: 2;
+}
+
+
+.tips-section div:nth-last-child input {visibility:initial;}
+
+.tips-section label:hover {
+    background-color: var(--lgCyan);
+    border-color: var(--lgCyan);
+transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
+}
+
+label.checked {
+    background-color: var(--primaryColor);
+    border-color: var(--primaryColor);
+}
+
+
+/* People number */
+.people-number {
+    position: relative;
+}
+
+.error {    
+    position: absolute;
+    top: 0;
+    right: -20px;
+    display: none;
+    color: hsl(0, 59%, 55%)}
+
+/* Summary */
+.summary {
+    padding: 40px;
+    background-color: var(--vdCyan);
+    border-radius: 20px;
+}
+
+.amount, .total {
+    display: flex;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.amount div, .total div {
+    flex-basis: 50%;
+}
+
+.amount p,  .total p {font-size: 12px;}
+
+button {
+    width: 100%;
+    margin-top: 80px;
+    padding: 8px;
+    border: 0;
+    outline: 0;
+    background-color: var(--primaryColor);
+    color: var(--vdCyan);
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+button.active {
+    opacity: 1;
+   
+}
+
+button.active:hover {
+    background-color: var(--lgCyan);
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
+}
+
+button.inactive {
+    opacity: 0.2;
+}
+
+button.inactive:hover {
+    background-color: var(--primaryColor);
+}
+
+@media screen and (max-width: 680px) {
+    .calc-container {
+        flex-direction: column;
+        padding: 20px;}
+
+    main {min-width: 100%;
+        top: 0;
+        left: 0;
+        transform: translate(0%, 0%);}
+    .logo {margin-top: 100px;}
+
+    .summary {
+        padding: 25px;
+    }
+
+    .people-number {
+        margin-bottom: 35px;
+    }
+
+}
+
+@media screen and (max-width: 375px) {
+    .tips-section div { 
+        flex-basis: 46%;
+    }
+}
